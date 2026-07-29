@@ -15,7 +15,7 @@ h1 {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-section {
@@ -26,6 +26,7 @@ h1 {
 
 #taskInput {
     flex: 1;
+    min-width: 0;
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -50,6 +51,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     padding: 15px;
     margin: 10px 0;
     background-color: #f9f9f9;
@@ -62,6 +64,12 @@ button:hover {
     border-left-color: #999;
     text-decoration: line-through;
     color: #999;
+}
+
+.task-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .task-buttons {
@@ -103,4 +111,34 @@ button:hover {
     margin-top: 20px;
     color: #666;
     font-size: 14px;
+}
+
+.empty-state {
+    margin: 0;
+    padding: 20px;
+    color: #999;
+    text-align: center;
+}
+
+@media (max-width: 540px) {
+    body {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .input-section,
+    .task-item {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filter-buttons,
+    .task-buttons {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn,
+    .task-buttons button {
+        flex: 1;
+    }
 }
